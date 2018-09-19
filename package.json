@@ -1,0 +1,23 @@
+{
+  "name": "im",
+  "version": "1.0.0",
+  "description": "node-im",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lycodestore/node-im.git"
+  },
+  "keywords": [
+    "node",
+    "im"
+  ],
+  "author": "ly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lycodestore/node-im/issues"
+  },
+  "homepage": "https://github.com/lycodestore/node-im#readme"
+}
