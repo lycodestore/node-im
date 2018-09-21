@@ -1,0 +1,66 @@
+.dialog {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    animation: show 0.3s ease-in-out 0.2s backwards;
+}
+
+@keyframes show {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+@keyframes notShow {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0)
+    }
+}
+
+.dialog .frame {
+    width: 400px;
+    margin: 10% auto 0 auto;
+    padding: 15px;
+    border-radius: 5px;
+    background: white;
+}
+.dialog .frame .content {
+    margin: 10px 0 10px 0;
+    text-align: center;
+}
+.dialog .frame .bottom {
+    text-align: right;
+}
+.dialog .frame .bottom .cancel {
+    display: inline-block;
+    padding: 8px 15px 8px 15px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+.dialog .frame .bottom .cancel:hover {
+    background: #eee;
+}
+.dialog .frame .bottom .confirm {
+    display: inline-block;
+    padding: 8px 15px 8px 15px;
+    margin-left: 15px;
+    font-size: 17px;
+    border-radius: 5px;
+    background: #2d8cf0;
+    color: white;
+    cursor: pointer;
+    border: 1px solid #2d8cf0;
+}
+.dialog .frame .bottom .confirm:hover {
+    opacity: 0.9;
+}
