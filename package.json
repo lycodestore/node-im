@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/lycodestore/node-im/issues"
   },
-  "homepage": "https://github.com/lycodestore/node-im#readme"
+  "homepage": "https://github.com/lycodestore/node-im#readme",
+  "dependencies": {
+    "mysql": "^2.16.0"
+  }
 }

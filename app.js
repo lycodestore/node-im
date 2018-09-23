@@ -7,8 +7,8 @@ const server = http.createServer((req, res) => {
     router(req, res)
 })
 
-server.listen(config.port, config.hostname, () => {
-    console.log(`listening......${config.hostname}:${config.port}`)
+server.listen(config.server.port, config.server.hostname, () => {
+    console.log(`listening......${config.server.hostname}:${config.server.port}`)
 })
 
 // const server = http.createServer((req, res) => {
