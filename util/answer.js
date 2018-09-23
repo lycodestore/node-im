@@ -1,7 +1,6 @@
-function send(reqBody, res) {
-    console.log(reqBody)
+function answer(answerBody, res) {
     res.writeHead(200, { 'Content-Type': 'application/json;charset=utf-8' })
-    res.end('dfdfdfdfdfdfdfdfdf')
+    res.end(JSON.stringify(answerBody))
 }
 
-module.exports = send
+module.exports = answer

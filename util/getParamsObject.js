@@ -5,8 +5,13 @@ function getParamsObject(req) {
             body.push(chunk)
         }).on('end', () => {
             body = Buffer.concat(body).toString()
-            let result = JSON.parse(body)
-            resolve(result)
+            try {
+                let result = JSON.parse(body)
+                resolve(result)
+            } catch(ex) {
+                reject(ex)
+            }
+            
         })
     })
 }
