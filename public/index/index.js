@@ -22,7 +22,7 @@ function register() {
     console.log('register')
 }
 window.onload = function() {
-    addChild('body', dialog('标题', '内容','dfdfd'))
+    //addChild('body', dialog('标题', '内容','dfdfd'))
     // var a = document.createElement('div')
     // a.innerHTML = '你好'
     // document.body.appendChild(a)
