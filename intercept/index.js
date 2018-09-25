@@ -1,3 +1,5 @@
+const router = require('../router')
+
 function getParamsObject(req) {
     return new Promise((resolve, reject) => {
         let body = []
@@ -8,12 +10,22 @@ function getParamsObject(req) {
             try {
                 let result = JSON.parse(body)
                 resolve(result)
-            } catch(ex) {
+            } catch (ex) {
                 reject(ex)
             }
-            
         })
     })
 }
 
-module.exports = getParamsObject
+function intercept(req, res) {
+    getParamsObject(req).then(body => {
+        req.body = body
+        router(req, res)
+    })
+    res.send = (result) => {
+        res.writeHead(200, { 'Content-Type': 'application/json;charset=utf-8' })
+        res.end(JSON.stringify(result))
+    }
+}
+
+module.exports = intercept

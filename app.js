@@ -1,9 +1,9 @@
 const http = require('http')
 const config = require('./config')
-const router = require('./router/index')
-
+const router = require('./router')
 
 const server = http.createServer((req, res) => {
+    //拦截所有请求，对请求进行分发和封装
     router(req, res)
 })
 
