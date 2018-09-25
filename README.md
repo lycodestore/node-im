@@ -7,9 +7,10 @@ node-im ----  app.js   入口文件，项目启动文件
           |---  config.js 配置文件
           |-  database.js  创建数据库连接对象
           |-  mime.js   存储服务器返回客户端的mime类型合集
-          |----  router   路由文件，拦截所有请求，对请求进行分发
-          |   |-  index.js  根据请求的路径对请求进行分发，对于Content-Type为application/json
-          |   |             类型的请求的req和res对象进行封装
+          |   路由文件，拦截所有请求，对请求进行分发         
+          |-- router --|-  index.js  根据请求的路径对请求进行分发，对于Content-Type为application/json
+          |            |   类型的请求的req和res对象进行封装
+          |              
           |
           |
           |
