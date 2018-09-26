@@ -5,6 +5,14 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
+}
+
+.dialog .frame {
+    width: 400px;
+    margin: 20% auto 0 auto;
+    padding: 15px;
+    border-radius: 5px;
+    background: white;
     animation: show 0.3s ease-in-out 0.2s backwards;
 }
 
@@ -25,15 +33,8 @@
     }
 }
 
-.dialog .frame {
-    width: 400px;
-    margin: 10% auto 0 auto;
-    padding: 15px;
-    border-radius: 5px;
-    background: white;
-}
 .dialog .frame .content {
-    margin: 10px 0 10px 0;
+    margin: 20px 0 20px 0;
     text-align: center;
 }
 .dialog .frame .bottom {

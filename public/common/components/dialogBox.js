@@ -10,10 +10,9 @@ function dialog(title, content, onConfirm) {
     </div>
     <div class="bottom">
     <div class="cancel" onclick="cancel()">取消</div>
-    <div class="confirm" onclick=${onConfirm}>确定</div>
+    <div class="confirm" onclick="confirm()">确定</div>
     </div>
     </div>`
-
     return dialogFrame
 }
 
@@ -22,5 +21,9 @@ function cancel() {
         let index = document.body.children.length - 1
         document.body.removeChild(document.body.children[index])
     }, 300)
-    getElement('.dialog').style.animation = 'notShow 0.3s ease-in-out 0.2s backwards'
+    getElement('.frame').style.animation = 'notShow 0.3s ease-in-out 0.2s backwards'
+}
+
+function confirm() {
+    cancel()
 }
