@@ -1,7 +1,7 @@
 //切换tab
 function changePage(pageIndex) {
     var main = getElementById('main')
-    switch(pageIndex) {
+    switch (pageIndex) {
         case 1:
             main.style.transform = 'translateX(0)'
             break
@@ -26,10 +26,7 @@ function login() {
             password: password
         }).then(res => {
             if (res.stateCode == 200) {
-                console.log(res)
-                console.log(window.history)
-                console.log(window.location)
-                console.log(window.location.href)
+                window.location.pathname = '/main/main.html'
             } else {
                 getElement('.submit-button').value = '登录'
                 addChild('body', dialog('错误', res.stateMsg))
@@ -43,12 +40,33 @@ function login() {
 }
 //注册
 function register() {
-    console.log('register')
-}
-window.onload = function() {
-    // post('/login', {username: 'ly', password: 'ly'}).then((res) => {console.log(res)})
-    //addChild('body', dialog('标题', '内容','dfdfd'))
-    // var a = document.createElement('div')
-    // a.innerHTML = '你好'
-    // document.body.appendChild(a)
+    let username = getElement('#register-username').value
+    let password = getElement('#register-password').value
+    let confirm = getElement('#register-password-confirm').value
+    if (username == '' || password == '' || confirm == '') {
+        addChild('body', dialog('提示', '请完整填写注册信息'))
+    } else if (password != confirm) {
+        addChild('body', dialog('提示', '两次输入密码不一致'))
+    } else {
+        getElement('.submit-button').value = '注册中  ......'
+        post('/register', {
+            username: username,
+            password: password
+        }).then(res => {
+            getElement('.submit-button').value = '注册'
+            if (res.stateCode == 200) {
+                console.log(res)
+                addChild('body', dialog('提示', '恭喜你注册成功！'))
+                changePage(2)
+                getElement('#register-username').value = ''
+                getElement('#register-password').value = '' 
+                getElement('#register-password-confirm').value = ''
+            } else {
+                addChild('body', dialog('提示', res.stateMsg))
+            }
+        }).catch(err => {
+            getElement('.submit-button').value = '注册'
+            addChild('body', dialog('提示', '真抱歉，出了点问题！'))
+        })
+    }
 }
