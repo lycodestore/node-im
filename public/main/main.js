@@ -11,5 +11,8 @@ function changeTab(pageIndex) {
         case 3:
             main.style.transform = 'translateX(-50%)'
             break
+        case 4:
+            main.style.transform = 'translateX(-75%)'
+            break
     }
 }
